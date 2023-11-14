@@ -1,3 +1,5 @@
+let mapleader="\<space>"
+
 "navigation
 nnoremap ]m :vsc Edit.NextMethod<cr>
 nnoremap [m :vsc Edit.PreviousMethod<cr>
@@ -8,48 +10,43 @@ nnoremap [l  :vsc Edit.PreviousHighlightedReference<cr>
 nnoremap ]d :vsc Edit.GoToNextLocation<cr>
 nnoremap [d :vsc Edit.GoToPrevLocation<cr>
 
-nnoremap <space>h :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<cr>
+nnoremap <leader>h :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<cr>
 
-nnoremap <Space>n :vsc Edit.GoToAll<CR>
 
-nnoremap <space>pv :vsc View.SolutionExplorer<cr>
-nnoremap <Space>pf :vsc Edit.GoToFile<CR>
+nnoremap <leader>vca :vsc View.ShowSmartTag<CR>
+nnoremap <leader>vrr :vsc Edit.FindAllReferences<CR>
+nnoremap <leader>vrn :vsc Refactor.Rename<CR>
+nnoremap <leader>pv :vsc View.SolutionExplorer<cr>
+nnoremap <leader>pf :vsc Edit.GoToFile<CR>
+nnoremap <leader>ps :vsc Edit.GoToAll<CR>
 
-nnoremap <Space>l :vsc View.ErrorList<cr>
-nnoremap <space>o :vsc View.Output<cr>
+nnoremap <leader>vce :vsc View.ErrorList<cr>
+nnoremap <leader>vco :vsc View.Output<cr>
 
-map gr :vsc Edit.FindAllReferences<CR>
-map gi :vsc Edit.GoToImplementation<CR>
-map gd :vsc Edit.GoToDefinition<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+
+xnoremap <leader>p "_dP
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+
+nnoremap "<leader>d" "_d
+vnoremap "<leader>d" "_d
 
 "Build/debug
-nnoremap <Space>b :vsc Build.BuildSolution<CR>
-nnoremap <Space>d :vsc Debug.Start<CR>
+nnoremap <leader>b :vsc Build.BuildSolution<CR>
+nnoremap <leader>d :vsc Debug.Start<CR>
 
 nnoremap <insert> :vsc Debug.ToggleBreakpoint<cr>
 
 "refactoring/formatting
-nnoremap <Space>r :vsc Refactor.Rename<CR>
-nnoremap <Space>f :vsc Edit.FormatDocument<CR>
-nnoremap <Space>q :vsc View.ShowSmartTag<CR>
+nnoremap <leader>f :vsc Edit.FormatDocument<CR>
 
 "version control
-nnoremap <Space>c :vsc Team.Git.CompareWithUnmodified<cr>
-nnoremap <Space>s :vsc Team.Git.GoToGitChanges<cr>
-
-"qol
-nnoremap <Space>p "0p
-
-"windowing
-nnoremap <Space>ww :vsc Window.MoveToMainDocumentGroup<CR>
-nnoremap <Space>wv :vsc Window.NewVerticalTabGroup<CR>
-nnoremap <Space>wH :vsc Window.MovetoPreviousTabGroup<CR>
-nnoremap <Space>wL :vsc Window.MovetoNextTabGroup<CR>
-nnoremap <Space>wd :vsc Window.CloseDocumentWindow<CR>
-
-"https://marketplace.visualstudio.com/items?itemName=MackenzieZastrow.NavigateTabGroups / https://github.com/jagt/vs-NavigateTabGroups/releases/tag/vs2022
-nnoremap <Space>wh :vsc Tools.NavigateTabGroups.Previous<CR>
-nnoremap <Space>wl :vsc Tools.NavigateTabGroups.Next<CR>
+nnoremap <leader>gd :vsc Team.Git.CompareWithUnmodified<cr>
+nnoremap <leader>gs :vsc Team.Git.GoToGitChanges<cr>
 
 " vs version of
 "vnoremap J :m '>+1<CR>gv=gv
